@@ -56,7 +56,7 @@
   }
   .nav-logo {
     font-family: 'Playfair Display', serif;
-    font-size: 20px;
+    font-size: 26px;
     letter-spacing: 0.18em;
     color: var(--pearl);
     text-transform: uppercase;
@@ -67,10 +67,10 @@
     align-items: center;
   }
   .nav-links a {
-    font-size: 11px;
+    font-size: 16px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: rgba(247,242,236,0.5);
+    color: rgba(247,242,236,0.85);
     transition: color 0.3s;
   }
   .nav-links a:hover { color: var(--champagne); }
@@ -156,11 +156,11 @@
     z-index: 1;
   }
   .hero-eyebrow {
-    font-size: 10px;
+    font-size: 17px;
     letter-spacing: 0.35em;
     text-transform: uppercase;
     color: var(--champagne);
-    opacity: 0.7;
+    opacity: 1;
     margin-bottom: 2.5rem;
   }
   .hero-wordmark {
@@ -176,14 +176,14 @@
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 300;
-    font-size: clamp(20px, 3vw, 28px);
+    font-size: clamp(26px, 4vw, 36px);
     color: var(--champagne);
     margin-top: 1.5rem;
     margin-bottom: 1rem;
   }
   .hero-sub {
-    font-size: 14px;
-    color: rgba(247,242,236,0.45);
+    font-size: 22px;
+    color: rgba(247,242,236,0.8);
     max-width: 440px;
     margin: 0 auto 2.5rem;
     line-height: 1.7;
@@ -191,10 +191,10 @@
   .btn-primary {
     display: inline-block;
     font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
+    font-size: 16px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    padding: 1rem 2.75rem;
+    padding: 1.1rem 3rem;
     border: 0.5px solid rgba(201,169,122,0.5);
     color: var(--champagne);
     background: transparent;
@@ -220,7 +220,7 @@
     padding: 6rem 0;
   }
   .section-eyebrow {
-    font-size: 10px;
+    font-size: 17px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--champagne);
@@ -228,14 +228,14 @@
   }
   .section-heading {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 4vw, 42px);
+    font-size: clamp(42px, 5vw, 62px);
     font-weight: 400;
     line-height: 1.2;
     margin-bottom: 1.5rem;
   }
   .section-sub {
-    font-size: 15px;
-    color: rgba(10,8,16,0.55);
+    font-size: 22px;
+    color: rgba(10,8,16,0.85);
     max-width: 520px;
     line-height: 1.75;
   }
@@ -259,21 +259,21 @@
   }
   .step-number {
     font-family: 'Playfair Display', serif;
-    font-size: 48px;
+    font-size: 62px;
     color: var(--fog);
     margin-bottom: 1.25rem;
     line-height: 1;
   }
   .step-title {
-    font-size: 13px;
+    font-size: 19px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     font-weight: 500;
     margin-bottom: 0.75rem;
   }
   .step-desc {
-    font-size: 14px;
-    color: rgba(10,8,16,0.55);
+    font-size: 20px;
+    color: rgba(10,8,16,0.85);
     line-height: 1.7;
   }
 
@@ -287,17 +287,17 @@
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 300;
-    font-size: clamp(22px, 3.5vw, 34px);
+    font-size: clamp(29px, 4.5vw, 44px);
     color: var(--pearl);
     max-width: 680px;
     margin: 0 auto 1rem;
     line-height: 1.4;
   }
   .quote-attr {
-    font-size: 11px;
+    font-size: 16px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: rgba(247,242,236,0.3);
+    color: rgba(247,242,236,0.65);
   }
 
   /* ─── PRICING ─── */
@@ -325,7 +325,7 @@
     border: 0.5px solid rgba(201,169,122,0.2);
   }
   .price-label {
-    font-size: 10px;
+    font-size: 17px;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--champagne);
@@ -333,30 +333,30 @@
   }
   .price-amount {
     font-family: 'Playfair Display', serif;
-    font-size: 42px;
+    font-size: 62px;
     font-weight: 400;
     margin-bottom: 0.25rem;
   }
   .price-period {
-    font-size: 12px;
-    color: rgba(10,8,16,0.4);
+    font-size: 18px;
+    color: rgba(10,8,16,0.7);
     margin-bottom: 2rem;
   }
-  .featured .price-period { color: rgba(247,242,236,0.35); }
+  .featured .price-period { color: rgba(247,242,236,0.55); }
   .price-features {
     list-style: none;
     margin-bottom: 2.5rem;
     flex-grow: 1;
   }
   .price-features li {
-    font-size: 14px;
+    font-size: 18px;
     padding: 0.5rem 0;
     border-bottom: 0.5px solid rgba(0,0,0,0.06);
-    color: rgba(10,8,16,0.6);
+    color: rgba(10,8,16,0.8);
   }
   .featured .price-features li {
     border-color: rgba(247,242,236,0.08);
-    color: rgba(247,242,236,0.6);
+    color: rgba(247,242,236,0.8);
   }
   .price-features li::before {
     content: '—';
@@ -364,8 +364,8 @@
     color: var(--champagne);
   }
   .price-note {
-    font-size: 12px;
-    color: rgba(10,8,16,0.35);
+    font-size: 15px;
+    color: rgba(10,8,16,0.55);
     margin-top: 3rem;
     line-height: 1.6;
   }
@@ -385,7 +385,7 @@
     border: none;
     text-align: left;
     font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 500;
     padding: 1.5rem 0;
     cursor: pointer;
@@ -407,9 +407,9 @@
     transform: rotate(45deg);
   }
   .faq-answer {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.75;
-    color: rgba(10,8,16,0.6);
+    color: rgba(10,8,16,0.8);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.3s ease;
@@ -437,16 +437,16 @@
   .form-group { display: flex; flex-direction: column; }
   .form-group.full-width { grid-column: 1 / -1; }
   .form-label {
-    font-size: 10px;
+    font-size: 14px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(247,242,236,0.4);
+    color: rgba(247,242,236,0.65);
     margin-bottom: 0.5rem;
   }
   .form-input, .form-select, .form-textarea {
     font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    padding: 0.85rem 1rem;
+    font-size: 18px;
+    padding: 0.95rem 1rem;
     background: rgba(247,242,236,0.05);
     border: 0.5px solid rgba(247,242,236,0.12);
     color: var(--pearl);
@@ -478,8 +478,8 @@
     flex-shrink: 0;
   }
   .form-checkbox-group label {
-    font-size: 12px;
-    color: rgba(247,242,236,0.5);
+    font-size: 16px;
+    color: rgba(247,242,236,0.7);
     line-height: 1.6;
   }
   .form-checkbox-group a { color: var(--champagne); text-decoration: underline; }
@@ -489,8 +489,8 @@
   }
   .form-disclaimer {
     grid-column: 1 / -1;
-    font-size: 11px;
-    color: rgba(247,242,236,0.25);
+    font-size: 14px;
+    color: rgba(247,242,236,0.45);
     line-height: 1.6;
     margin-top: 0.5rem;
   }
@@ -500,8 +500,8 @@
     background: var(--midnight);
     border-top: 0.5px solid rgba(201,169,122,0.1);
     padding: 4rem 0 2rem;
-    color: rgba(247,242,236,0.4);
-    font-size: 13px;
+    color: rgba(247,242,236,0.6);
+    font-size: 16px;
   }
   .footer-top {
     display: flex;
@@ -513,12 +513,12 @@
   }
   .footer-brand .nav-logo { margin-bottom: 0.75rem; }
   .footer-brand p {
-    font-size: 13px;
+    font-size: 16px;
     max-width: 280px;
     line-height: 1.6;
   }
   .footer-col h4 {
-    font-size: 10px;
+    font-size: 14px;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--champagne);
@@ -526,8 +526,8 @@
   }
   .footer-col a {
     display: block;
-    font-size: 13px;
-    color: rgba(247,242,236,0.4);
+    font-size: 16px;
+    color: rgba(247,242,236,0.6);
     padding: 0.3rem 0;
     transition: color 0.3s;
   }
@@ -539,8 +539,8 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 1rem;
-    font-size: 11px;
-    color: rgba(247,242,236,0.25);
+    font-size: 14px;
+    color: rgba(247,242,236,0.45);
   }
 
   /* ─── POLICY MODALS ─── */
