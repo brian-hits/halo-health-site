@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Halo Health — You, at full brightness</title>
+<meta name="description" content="Halo Health offers personalized GLP-1 weight management through licensed telehealth providers and compounded medications prepared by a state-licensed 503A pharmacy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --midnight: #0A0810;
+    --plum: #2D1F2E;
+    --champagne: #C9A97A;
+    --blush: #D4A8A8;
+    --fog: #E8E3DC;
+    --pearl: #F7F2EC;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--midnight);
+    background: var(--pearl);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(10,8,16,0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 0.5px solid rgba(201,169,122,0.12);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    letter-spacing: 0.18em;
+    color: var(--pearl);
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .nav-links a {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(247,242,236,0.5);
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--champagne); }
+  .nav-cta {
+    padding: 0.65rem 1.75rem !important;
+    border: 0.5px solid rgba(201,169,122,0.5) !important;
+    color: var(--champagne) !important;
+    opacity: 1 !important;
+    transition: background 0.3s, color 0.3s !important;
+  }
+  .nav-cta:hover {
+    background: var(--champagne) !important;
+    color: var(--midnight) !important;
+  }
+
+  /* ─── MOBILE NAV ─── */
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 1px;
+    background: var(--pearl);
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    .nav-toggle { display: block; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: rgba(10,8,16,0.97);
+      padding: 2rem;
+      gap: 1.5rem;
+      border-bottom: 0.5px solid rgba(201,169,122,0.12);
+    }
+    .nav-links.open { display: flex; }
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--midnight);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 2rem;
+  }
+  .hero::before, .hero::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero::before {
+    width: 600px;
+    height: 600px;
+    border: 0.5px solid rgba(201,169,122,0.12);
+  }
+  .hero::after {
+    width: 900px;
+    height: 900px;
+    border: 0.5px solid rgba(201,169,122,0.06);
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+  }
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    opacity: 0.7;
+    margin-bottom: 2.5rem;
+  }
+  .hero-wordmark {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(64px, 12vw, 120px);
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    color: var(--pearl);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(20px, 3vw, 28px);
+    color: var(--champagne);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .hero-sub {
+    font-size: 14px;
+    color: rgba(247,242,236,0.45);
+    max-width: 440px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+  }
+  .btn-primary {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 1rem 2.75rem;
+    border: 0.5px solid rgba(201,169,122,0.5);
+    color: var(--champagne);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .btn-primary:hover {
+    background: var(--champagne);
+    color: var(--midnight);
+  }
+  .btn-solid {
+    background: var(--champagne);
+    color: var(--midnight);
+    border-color: var(--champagne);
+  }
+  .btn-solid:hover {
+    background: #b8985e;
+    border-color: #b8985e;
+  }
+
+  /* ─── SECTIONS ─── */
+  section {
+    padding: 6rem 0;
+  }
+  .section-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    margin-bottom: 1.25rem;
+  }
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  .section-sub {
+    font-size: 15px;
+    color: rgba(10,8,16,0.55);
+    max-width: 520px;
+    line-height: 1.75;
+  }
+
+  /* ─── HOW IT WORKS ─── */
+  .how-it-works { background: var(--pearl); }
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3.5rem;
+  }
+  @media (max-width: 768px) {
+    .steps-grid { grid-template-columns: 1fr; }
+  }
+  .step-card {
+    background: white;
+    border: 0.5px solid rgba(0,0,0,0.06);
+    padding: 2.5rem 2rem;
+    position: relative;
+  }
+  .step-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: var(--fog);
+    margin-bottom: 1.25rem;
+    line-height: 1;
+  }
+  .step-title {
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+  .step-desc {
+    font-size: 14px;
+    color: rgba(10,8,16,0.55);
+    line-height: 1.7;
+  }
+
+  /* ─── QUOTE BANNER ─── */
+  .quote-banner {
+    background: var(--midnight);
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+  .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(22px, 3.5vw, 34px);
+    color: var(--pearl);
+    max-width: 680px;
+    margin: 0 auto 1rem;
+    line-height: 1.4;
+  }
+  .quote-attr {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(247,242,236,0.3);
+  }
+
+  /* ─── PRICING ─── */
+  .pricing { background: var(--fog); }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3.5rem;
+    max-width: 800px;
+  }
+  @media (max-width: 768px) {
+    .pricing-grid { grid-template-columns: 1fr; }
+  }
+  .price-card {
+    background: white;
+    border: 0.5px solid rgba(0,0,0,0.06);
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .price-card.featured {
+    background: var(--midnight);
+    color: var(--pearl);
+    border: 0.5px solid rgba(201,169,122,0.2);
+  }
+  .price-label {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    margin-bottom: 1.5rem;
+  }
+  .price-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+  }
+  .price-period {
+    font-size: 12px;
+    color: rgba(10,8,16,0.4);
+    margin-bottom: 2rem;
+  }
+  .featured .price-period { color: rgba(247,242,236,0.35); }
+  .price-features {
+    list-style: none;
+    margin-bottom: 2.5rem;
+    flex-grow: 1;
+  }
+  .price-features li {
+    font-size: 14px;
+    padding: 0.5rem 0;
+    border-bottom: 0.5px solid rgba(0,0,0,0.06);
+    color: rgba(10,8,16,0.6);
+  }
+  .featured .price-features li {
+    border-color: rgba(247,242,236,0.08);
+    color: rgba(247,242,236,0.6);
+  }
+  .price-features li::before {
+    content: '—';
+    margin-right: 0.75rem;
+    color: var(--champagne);
+  }
+  .price-note {
+    font-size: 12px;
+    color: rgba(10,8,16,0.35);
+    margin-top: 3rem;
+    line-height: 1.6;
+  }
+
+  /* ─── FAQ ─── */
+  .faq { background: var(--pearl); }
+  .faq-list {
+    margin-top: 3rem;
+    max-width: 720px;
+  }
+  .faq-item {
+    border-bottom: 0.5px solid rgba(0,0,0,0.08);
+  }
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--midnight);
+  }
+  .faq-question::after {
+    content: '+';
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--champagne);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+    margin-left: 1rem;
+  }
+  .faq-item.open .faq-question::after {
+    transform: rotate(45deg);
+  }
+  .faq-answer {
+    font-size: 14px;
+    line-height: 1.75;
+    color: rgba(10,8,16,0.6);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+  .faq-item.open .faq-answer {
+    max-height: 600px;
+    padding-bottom: 1.5rem;
+  }
+
+  /* ─── QUESTIONNAIRE ─── */
+  .questionnaire {
+    background: var(--midnight);
+    color: var(--pearl);
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    max-width: 640px;
+  }
+  @media (max-width: 600px) {
+    .form-grid { grid-template-columns: 1fr; }
+  }
+  .form-group { display: flex; flex-direction: column; }
+  .form-group.full-width { grid-column: 1 / -1; }
+  .form-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(247,242,236,0.4);
+    margin-bottom: 0.5rem;
+  }
+  .form-input, .form-select, .form-textarea {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    padding: 0.85rem 1rem;
+    background: rgba(247,242,236,0.05);
+    border: 0.5px solid rgba(247,242,236,0.12);
+    color: var(--pearl);
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--champagne);
+  }
+  .form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23C9A97A' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+  .form-select option { background: var(--midnight); color: var(--pearl); }
+  .form-textarea { resize: vertical; min-height: 100px; }
+  .form-checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    grid-column: 1 / -1;
+    margin-top: 0.5rem;
+  }
+  .form-checkbox-group input[type="checkbox"] {
+    accent-color: var(--champagne);
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+  .form-checkbox-group label {
+    font-size: 12px;
+    color: rgba(247,242,236,0.5);
+    line-height: 1.6;
+  }
+  .form-checkbox-group a { color: var(--champagne); text-decoration: underline; }
+  .form-submit {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+  }
+  .form-disclaimer {
+    grid-column: 1 / -1;
+    font-size: 11px;
+    color: rgba(247,242,236,0.25);
+    line-height: 1.6;
+    margin-top: 0.5rem;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--midnight);
+    border-top: 0.5px solid rgba(201,169,122,0.1);
+    padding: 4rem 0 2rem;
+    color: rgba(247,242,236,0.4);
+    font-size: 13px;
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .footer-brand .nav-logo { margin-bottom: 0.75rem; }
+  .footer-brand p {
+    font-size: 13px;
+    max-width: 280px;
+    line-height: 1.6;
+  }
+  .footer-col h4 {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    margin-bottom: 1rem;
+  }
+  .footer-col a {
+    display: block;
+    font-size: 13px;
+    color: rgba(247,242,236,0.4);
+    padding: 0.3rem 0;
+    transition: color 0.3s;
+  }
+  .footer-col a:hover { color: var(--pearl); }
+  .footer-bottom {
+    border-top: 0.5px solid rgba(247,242,236,0.06);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 11px;
+    color: rgba(247,242,236,0.25);
+  }
+
+  /* ─── POLICY MODALS ─── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(10,8,16,0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal {
+    background: var(--pearl);
+    max-width: 720px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 3.5rem 3rem;
+    position: relative;
+  }
+  .modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--midnight);
+    line-height: 1;
+  }
+  .modal h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+  .modal .modal-updated {
+    font-size: 12px;
+    color: rgba(10,8,16,0.35);
+    margin-bottom: 2rem;
+  }
+  .modal h3 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .modal p, .modal li {
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: rgba(10,8,16,0.65);
+    margin-bottom: 0.75rem;
+  }
+  .modal ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+  .modal li { margin-bottom: 0.35rem; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav>
+  <a href="#top" class="nav-logo">Halo</a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="#how-it-works">How It Works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="#assessment" class="nav-cta">Begin Assessment</a>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">GLP-1 Weight Management · Telehealth</div>
+    <div class="hero-wordmark">HALO</div>
+    <div class="hero-tagline">You, at full brightness.</div>
+    <p class="hero-sub">Personalized weight management with compounded GLP-1 therapy, prescribed by licensed providers and prepared by a state-licensed compounding pharmacy.</p>
+    <a href="#assessment" class="btn-primary">Begin Your Assessment</a>
+  </div>
+</section>
+
+<!-- ═══════════ HOW IT WORKS ═══════════ -->
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <div class="section-eyebrow">The Process</div>
+    <h2 class="section-heading">Three steps. No waiting rooms.</h2>
+    <p class="section-sub">Your body has always known what it needed. We just give it a clearer signal.</p>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <div class="step-title">Complete Your Assessment</div>
+        <p class="step-desc">Answer a few questions about your health history and goals. It takes about five minutes — from wherever you are.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">02</div>
+        <div class="step-title">Provider Review</div>
+        <p class="step-desc">A licensed clinical provider reviews your profile and, if appropriate, prescribes a personalized compounded GLP-1 protocol.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <div class="step-title">Delivered to You</div>
+        <p class="step-desc">Your medication is compounded by a licensed 503A pharmacy and shipped directly to your door with clear dosing instructions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ QUOTE ═══════════ -->
+<div class="quote-banner">
+  <div class="quote-text">"Something shifted. Everyone noticed."</div>
+  <div class="quote-attr">— Halo Member, Austin TX</div>
+</div>
+
+<!-- ═══════════ PRICING ═══════════ -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-eyebrow">Investment</div>
+    <h2 class="section-heading">Transparent pricing.<br>No hidden fees.</h2>
+    <p class="section-sub">Every plan includes provider consultation, ongoing clinical support, and medication shipped to your door.</p>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-label">Monthly</div>
+        <div class="price-amount">$299</div>
+        <div class="price-period">per month</div>
+        <ul class="price-features">
+          <li>Licensed provider consultation</li>
+          <li>Compounded GLP-1 medication</li>
+          <li>Free shipping</li>
+          <li>Ongoing clinical support</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <a href="#assessment" class="btn-primary" style="text-align:center;">Get Started</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-label">3-Month Plan</div>
+        <div class="price-amount">$249</div>
+        <div class="price-period">per month · billed quarterly</div>
+        <ul class="price-features">
+          <li>Everything in Monthly</li>
+          <li>Priority provider access</li>
+          <li>Personalized dosing adjustments</li>
+          <li>Dedicated care coordination</li>
+          <li>Save $150 over 3 months</li>
+        </ul>
+        <a href="#assessment" class="btn-primary btn-solid" style="text-align:center;">Get Started</a>
+      </div>
+    </div>
+    <p class="price-note">Pricing is subject to change. Medication is compounded by a licensed 503A pharmacy and prescribed only when clinically appropriate. Individual results vary.</p>
+  </div>
+</section>
+
+<!-- ═══════════ FAQ ═══════════ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-eyebrow">Questions</div>
+    <h2 class="section-heading">What you should know.</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question">What is compounded GLP-1 medication?</button>
+        <div class="faq-answer">GLP-1 receptor agonists are a class of medications that work with your body's natural hunger-regulating signals. Our compounded GLP-1 medications are prepared by a state-licensed compounding pharmacy operating under Section 503A of the Federal Food, Drug, and Cosmetic Act. Compounded medications are tailored preparations made to meet individual patient needs as prescribed by a licensed healthcare provider.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Who are the clinical providers?</button>
+        <div class="faq-answer">Our clinical services are provided by Wasef Health, PC, c/o Michael Wasef, MD. Their office is located at 5260 78th Ave N, PO Box 1697, Pinellas Park, FL 33780. You can reach them at <a href="mailto:contact@wasef-health.com" style="color:var(--champagne);">contact@wasef-health.com</a>. All prescriptions are written by licensed healthcare providers who review your medical history and determine clinical appropriateness before any medication is prescribed.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Which pharmacy fills my prescription?</button>
+        <div class="faq-answer">Prescriptions are filled by F&amp;F Pharmacies Inc dba Jungle Jim's Pharmacy, located at 5484 Dixie Highway, Fairfield, OH 45014. They can be reached at (877) 858-3784. Jungle Jim's Pharmacy is a state-licensed compounding pharmacy that maintains licensure in 44 US states. They are currently unable to dispense to the following states: California, Nevada, New Jersey, North Carolina, Texas, Massachusetts, Mississippi, New Hampshire, West Virginia, and Delaware.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is this medication right for me?</button>
+        <div class="faq-answer">GLP-1 therapy may be appropriate for adults with a BMI of 27 or higher who are seeking medically supervised weight management. During your assessment, our clinical providers will review your complete health profile — including medical history, current medications, and health goals — to determine if this protocol is right for you. Not every patient will qualify, and your safety always comes first.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What are the potential side effects?</button>
+        <div class="faq-answer">Common side effects of GLP-1 receptor agonists may include nausea, vomiting, diarrhea, constipation, and injection-site reactions. These tend to be mild and often improve over time as your body adjusts. Your provider will discuss potential risks and side effects specific to your health profile before prescribing. If you experience severe or concerning symptoms, contact your healthcare provider immediately.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How quickly will I see results?</button>
+        <div class="faq-answer">Individual results vary. Many patients begin noticing changes within the first few weeks of treatment, though meaningful progress typically becomes apparent over 8–12 weeks. Your provider will work with you to adjust dosing as needed and ensure you're on the most effective protocol for your body.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I cancel my plan?</button>
+        <div class="faq-answer">Yes. Monthly plans can be cancelled at any time before your next billing cycle. For quarterly plans, please refer to our <a href="#" onclick="openModal('refund-modal');return false;" style="color:var(--champagne);">Refund Policy</a> for details on cancellations and eligibility for refunds.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Which states do you serve?</button>
+        <div class="faq-answer">Halo Health is available in 44 US states. Due to pharmacy licensing requirements, we are currently unable to serve patients in California, Nevada, New Jersey, North Carolina, Texas, Massachusetts, Mississippi, New Hampshire, West Virginia, and Delaware. We are actively working to expand availability.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ASSESSMENT / QUESTIONNAIRE ═══════════ -->
+<section class="questionnaire" id="assessment">
+  <div class="container">
+    <div class="section-eyebrow" style="color:var(--champagne);">Start Here</div>
+    <h2 class="section-heading" style="color:var(--pearl);">Begin your assessment.</h2>
+    <p style="color:rgba(247,242,236,0.45); max-width:480px; font-size:14px; line-height:1.7;">Answer a few questions so our clinical team can determine if GLP-1 therapy is right for you. This takes about 5 minutes.</p>
+
+    <form class="form-grid" onsubmit="handleFormSubmit(event)">
+
+      <div class="form-group">
+        <label class="form-label">First Name</label>
+        <input type="text" class="form-input" required placeholder="First name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Last Name</label>
+        <input type="text" class="form-input" required placeholder="Last name">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" required placeholder="you@email.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone</label>
+        <input type="tel" class="form-input" required placeholder="(555) 000-0000">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Date of Birth</label>
+        <input type="date" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">State of Residence</label>
+        <select class="form-select" required>
+          <option value="" disabled selected>Select your state</option>
+          <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option>
+          <option>Colorado</option><option>Connecticut</option>
+          <option>District of Columbia</option>
+          <option>Florida</option><option>Georgia</option><option>Hawaii</option>
+          <option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option>
+          <option>Kansas</option><option>Kentucky</option><option>Louisiana</option>
+          <option>Maine</option><option>Maryland</option><option>Michigan</option><option>Minnesota</option>
+          <option>Missouri</option><option>Montana</option>
+          <option>Nebraska</option><option>New Mexico</option><option>New York</option>
+          <option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option>
+          <option>Pennsylvania</option><option>Rhode Island</option>
+          <option>South Carolina</option><option>South Dakota</option><option>Tennessee</option>
+          <option>Utah</option><option>Vermont</option><option>Virginia</option>
+          <option>Washington</option><option>Wisconsin</option><option>Wyoming</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Biological Sex</label>
+        <select class="form-select" required>
+          <option value="" disabled selected>Select</option>
+          <option>Female</option>
+          <option>Male</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Current Weight (lbs)</label>
+        <input type="number" class="form-input" required placeholder="e.g. 185">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Height</label>
+        <div style="display:flex;gap:0.75rem;">
+          <input type="number" class="form-input" placeholder="ft" min="3" max="8" style="width:50%;" required>
+          <input type="number" class="form-input" placeholder="in" min="0" max="11" style="width:50%;" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Goal Weight (lbs)</label>
+        <input type="number" class="form-input" placeholder="e.g. 155">
+      </div>
+      <div class="form-group full-width">
+        <label class="form-label">Have you previously used GLP-1 medications?</label>
+        <select class="form-select" required>
+          <option value="" disabled selected>Select</option>
+          <option>No, this would be my first time</option>
+          <option>Yes, currently using</option>
+          <option>Yes, previously used but stopped</option>
+        </select>
+      </div>
+      <div class="form-group full-width">
+        <label class="form-label">Current Medications (if any)</label>
+        <textarea class="form-textarea" placeholder="List any current medications, supplements, or treatments"></textarea>
+      </div>
+      <div class="form-group full-width">
+        <label class="form-label">Medical Conditions (if any)</label>
+        <textarea class="form-textarea" placeholder="List any relevant medical conditions (e.g., diabetes, thyroid conditions, history of pancreatitis)"></textarea>
+      </div>
+      <div class="form-group full-width">
+        <label class="form-label">Allergies</label>
+        <input type="text" class="form-input" placeholder="List any known allergies">
+      </div>
+
+      <div class="form-checkbox-group">
+        <input type="checkbox" id="consent-telehealth" required>
+        <label for="consent-telehealth">I consent to receive telehealth services and understand that a licensed provider will review my information to determine clinical appropriateness.</label>
+      </div>
+      <div class="form-checkbox-group">
+        <input type="checkbox" id="consent-privacy" required>
+        <label for="consent-privacy">I have read and agree to the <a href="#" onclick="openModal('privacy-modal');return false;">Privacy Policy</a>, <a href="#" onclick="openModal('terms-modal');return false;">Terms &amp; Conditions</a>, and <a href="#" onclick="openModal('refund-modal');return false;">Refund Policy</a>.</label>
+      </div>
+      <div class="form-checkbox-group">
+        <input type="checkbox" id="consent-accurate" required>
+        <label for="consent-accurate">I certify that the information provided is accurate and complete to the best of my knowledge.</label>
+      </div>
+
+      <div class="form-submit">
+        <button type="submit" class="btn-primary btn-solid" style="width:100%;text-align:center;font-family:'DM Sans',sans-serif;font-size:12px;">Submit Assessment</button>
+      </div>
+      <div class="form-disclaimer">Your information is protected under HIPAA and will only be shared with your assigned clinical provider and pharmacy for treatment purposes. By submitting, you agree to our Terms &amp; Conditions and Privacy Policy.</div>
+    </form>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo">Halo</div>
+        <p>Personalized GLP-1 weight management. Compounded by a licensed 503A pharmacy. Prescribed by licensed providers.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#assessment">Begin Assessment</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#" onclick="openModal('terms-modal');return false;">Terms &amp; Conditions</a>
+        <a href="#" onclick="openModal('refund-modal');return false;">Refund Policy</a>
+        <a href="#" onclick="openModal('privacy-modal');return false;">Privacy Policy (HIPAA)</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:contact@wasef-health.com">contact@wasef-health.com</a>
+        <a href="tel:8778583784">(877) 858-3784</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Halo Health. All rights reserved.</span>
+      <span>Medications are compounded by a state-licensed compounding pharmacy operating under Section 503A. Individual results may vary. This site does not provide medical advice.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════ POLICY MODALS ═══════════ -->
+
+<!-- TERMS & CONDITIONS -->
+<div class="modal-overlay" id="terms-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('terms-modal')">&times;</button>
+    <h2>Terms &amp; Conditions</h2>
+    <div class="modal-updated">Last Updated: April 2026</div>
+
+    <h3>1. Acceptance of Terms</h3>
+    <p>By accessing or using the Halo Health website and services ("Services"), you agree to be bound by these Terms & Conditions. If you do not agree, do not use the Services. "Halo Health," "we," "us," or "our" refers to the operator of this website and its affiliated clinical and pharmacy partners.</p>
+
+    <h3>2. Eligibility</h3>
+    <p>You must be at least 18 years of age and reside in a US state where our pharmacy partner is licensed to dispense medications. Our Services are not available in California, Nevada, New Jersey, North Carolina, Texas, Massachusetts, Mississippi, New Hampshire, West Virginia, or Delaware.</p>
+
+    <h3>3. Nature of Services</h3>
+    <p>Halo Health is a telehealth platform that connects patients with licensed healthcare providers for evaluation and, when clinically appropriate, prescription of compounded GLP-1 medications. The Services do not replace your primary care physician. All medical decisions are made by licensed providers based on their independent clinical judgment.</p>
+
+    <h3>4. No Guarantee of Prescription</h3>
+    <p>Completing an assessment does not guarantee you will receive a prescription. Providers may determine that GLP-1 therapy is not clinically appropriate for you. In such cases, you will not be charged for medication.</p>
+
+    <h3>5. Compounded Medications</h3>
+    <p>Medications prescribed through Halo Health are compounded by a licensed 503A pharmacy. Compounded medications are not commercially manufactured products and are prepared to meet individual patient prescriptions. They have not been reviewed or approved by the FDA for safety, efficacy, or manufacturing quality.</p>
+
+    <h3>6. Telehealth Consent</h3>
+    <p>By using the Services, you consent to receiving healthcare services via telehealth, including asynchronous provider consultations. You understand the limitations of telehealth, including the inability to perform physical examinations, and agree that telehealth is appropriate for the services offered.</p>
+
+    <h3>7. Accurate Information</h3>
+    <p>You agree to provide truthful, accurate, and complete information in your assessment and throughout your treatment. Providing false or misleading health information may result in termination of services and could pose serious health risks.</p>
+
+    <h3>8. Payment &amp; Billing</h3>
+    <p>Fees are charged as outlined on our pricing page. Subscription plans auto-renew unless cancelled before the next billing cycle. You authorize us to charge the payment method on file for all applicable fees.</p>
+
+    <h3>9. Limitation of Liability</h3>
+    <p>To the maximum extent permitted by law, Halo Health and its affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Services. Our total liability shall not exceed the amount paid by you in the 12 months preceding the claim.</p>
+
+    <h3>10. Intellectual Property</h3>
+    <p>All content, trademarks, logos, and materials on this website are the property of Halo Health or its licensors and may not be reproduced without prior written consent.</p>
+
+    <h3>11. Modifications</h3>
+    <p>We reserve the right to modify these Terms at any time. Continued use of the Services after changes are posted constitutes acceptance of the updated Terms.</p>
+
+    <h3>12. Governing Law</h3>
+    <p>These Terms are governed by the laws of the State of Florida, without regard to conflict of law principles.</p>
+
+    <h3>13. Contact</h3>
+    <p>For questions about these Terms, contact us at contact@wasef-health.com.</p>
+  </div>
+</div>
+
+<!-- REFUND POLICY -->
+<div class="modal-overlay" id="refund-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('refund-modal')">&times;</button>
+    <h2>Refund Policy</h2>
+    <div class="modal-updated">Last Updated: April 2026</div>
+
+    <h3>Monthly Plans</h3>
+    <p>Monthly subscriptions may be cancelled at any time before the next billing date. Once a monthly payment has been processed and medication has been shipped, that month's charge is non-refundable.</p>
+
+    <h3>Quarterly Plans</h3>
+    <p>Quarterly plans are billed upfront for three months of service. If you cancel within the first 14 days of enrollment and before medication has been shipped, you are eligible for a full refund. After medication has shipped or after the 14-day window, the quarterly payment is non-refundable.</p>
+
+    <h3>Prescription Not Issued</h3>
+    <p>If our clinical provider determines that GLP-1 therapy is not appropriate for you, you will not be charged for medication. Any consultation fees paid are non-refundable, as the provider's time and clinical evaluation have been rendered.</p>
+
+    <h3>Medication Issues</h3>
+    <p>If you receive medication that is damaged, defective, or incorrect, please contact us within 48 hours of delivery. We will work with our pharmacy partner to arrange a replacement or credit at no additional cost.</p>
+
+    <h3>How to Request a Refund</h3>
+    <p>To request a refund or cancel your subscription, contact us at contact@wasef-health.com or call (877) 858-3784. Please include your full name and the email address associated with your account. Refund requests are processed within 7–10 business days.</p>
+
+    <h3>Right to Modify</h3>
+    <p>Halo Health reserves the right to update this Refund Policy at any time. Any changes will apply to purchases made after the updated policy is posted.</p>
+  </div>
+</div>
+
+<!-- PRIVACY POLICY (HIPAA) -->
+<div class="modal-overlay" id="privacy-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('privacy-modal')">&times;</button>
+    <h2>Privacy Policy</h2>
+    <div class="modal-updated">Last Updated: April 2026 · HIPAA Compliant</div>
+
+    <p>Halo Health ("we," "us," "our") is committed to protecting the privacy and security of your personal and health information. This Privacy Policy describes how we collect, use, disclose, and safeguard your information in compliance with the Health Insurance Portability and Accountability Act (HIPAA), state privacy laws, and other applicable regulations.</p>
+
+    <h3>1. Information We Collect</h3>
+    <p><strong>Personal Information:</strong> Name, date of birth, email address, phone number, mailing address, and payment information.</p>
+    <p><strong>Protected Health Information (PHI):</strong> Medical history, current medications, allergies, health conditions, assessment responses, prescriptions, treatment records, and provider communications.</p>
+    <p><strong>Technical Information:</strong> IP address, browser type, device information, and cookies used to operate and improve our website.</p>
+
+    <h3>2. How We Use Your Information</h3>
+    <p>We use your information for the following purposes:</p>
+    <ul>
+      <li><strong>Treatment:</strong> To facilitate clinical evaluation, prescribing, and delivery of compounded medications.</li>
+      <li><strong>Payment:</strong> To process transactions and manage your subscription.</li>
+      <li><strong>Healthcare Operations:</strong> To coordinate with our clinical providers (Wasef Health, PC) and pharmacy partner (F&amp;F Pharmacies Inc dba Jungle Jim's Pharmacy) for quality assurance and care coordination.</li>
+      <li><strong>Communication:</strong> To send appointment reminders, shipping updates, and important health notifications.</li>
+      <li><strong>Legal Compliance:</strong> To comply with applicable laws and regulatory requirements.</li>
+    </ul>
+
+    <h3>3. How We Share Your Information</h3>
+    <p>We do not sell your personal or health information. We may share your PHI only as follows:</p>
+    <ul>
+      <li><strong>Clinical Providers:</strong> Wasef Health, PC (5260 78th Ave N, PO Box 1697, Pinellas Park, FL 33780) for medical evaluation and prescribing.</li>
+      <li><strong>Pharmacy Partner:</strong> F&amp;F Pharmacies Inc dba Jungle Jim's Pharmacy (5484 Dixie Highway, Fairfield, OH 45014) for medication compounding and dispensing.</li>
+      <li><strong>As Required by Law:</strong> When required by court order, subpoena, or applicable federal or state law.</li>
+      <li><strong>Health &amp; Safety:</strong> When necessary to prevent a serious threat to health or safety.</li>
+    </ul>
+
+    <h3>4. Your Rights Under HIPAA</h3>
+    <p>As a patient, you have the following rights regarding your PHI:</p>
+    <ul>
+      <li><strong>Right to Access:</strong> You may request a copy of your health records.</li>
+      <li><strong>Right to Amend:</strong> You may request corrections to your health information.</li>
+      <li><strong>Right to an Accounting of Disclosures:</strong> You may request a record of how your PHI has been shared.</li>
+      <li><strong>Right to Restrict:</strong> You may request restrictions on certain uses or disclosures of your PHI.</li>
+      <li><strong>Right to Confidential Communications:</strong> You may request that we contact you through specific channels.</li>
+      <li><strong>Right to a Paper Copy:</strong> You may request a paper copy of this Privacy Policy.</li>
+      <li><strong>Right to File a Complaint:</strong> You may file a complaint with us or with the U.S. Department of Health &amp; Human Services if you believe your privacy rights have been violated.</li>
+    </ul>
+
+    <h3>5. Data Security</h3>
+    <p>We implement administrative, technical, and physical safeguards to protect your information, including encryption of data in transit and at rest, access controls, audit logging, and regular security assessments. Only authorized personnel involved in your care and treatment have access to your PHI.</p>
+
+    <h3>6. Data Retention</h3>
+    <p>We retain your health records for a minimum of six (6) years from the date of last treatment or as required by applicable state law, whichever is longer. Personal information used for billing is retained as required for legal and tax compliance.</p>
+
+    <h3>7. Cookies &amp; Analytics</h3>
+    <p>Our website uses cookies and similar technologies to improve user experience and analyze site traffic. These tools do not collect PHI. You may adjust cookie settings in your browser at any time.</p>
+
+    <h3>8. Children's Privacy</h3>
+    <p>Our Services are not directed to individuals under 18 years of age. We do not knowingly collect information from minors.</p>
+
+    <h3>9. Changes to This Policy</h3>
+    <p>We may update this Privacy Policy periodically. Changes will be posted on this page with an updated effective date. Continued use of the Services after changes constitutes your acceptance of the revised policy.</p>
+
+    <h3>10. Contact Us</h3>
+    <p>To exercise your rights, ask questions, or file a complaint regarding your privacy, contact us at:</p>
+    <p>
+      <strong>Halo Health Privacy Officer</strong><br>
+      Email: contact@wasef-health.com<br>
+      Phone: (877) 858-3784
+    </p>
+    <p>You may also contact the U.S. Department of Health &amp; Human Services Office for Civil Rights at <a href="https://www.hhs.gov/ocr" target="_blank" rel="noopener" style="color:var(--champagne);">www.hhs.gov/ocr</a>.</p>
+
+    <p style="margin-top:2rem; padding-top:1rem; border-top:0.5px solid rgba(0,0,0,0.08); font-size:12px; color:rgba(10,8,16,0.35);">Note: This privacy policy should be reviewed by your legal counsel to ensure full compliance with HIPAA, state telehealth laws, and your specific business practices. Replace this policy with your finalized HIPAA Privacy Policy from your legal team when ready.</p>
+  </div>
+</div>
+
+<!-- ═══════════ SCRIPTS ═══════════ -->
+<script>
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const wasOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      // Toggle current
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Modal open/close
+  function openModal(id) {
+    document.getElementById(id).classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  // Close modal on overlay click
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', e => {
+      if (e.target === overlay) {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+  // Close modal on Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.active').forEach(m => {
+        m.classList.remove('active');
+      });
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Form submission placeholder
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    alert('Thank you! Your assessment has been submitted. A member of our clinical team will review your information and follow up within 24–48 hours.');
+    e.target.reset();
+  }
+
+  // Smooth scroll for nav links (offset for fixed nav)
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = 70;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+        // Close mobile nav
+        document.querySelector('.nav-links').classList.remove('open');
+      }
+    });
+  });
+</script>
+</body>
+</html>
