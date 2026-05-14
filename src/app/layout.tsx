@@ -25,6 +25,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tryhalohealth.com"),
   title: "Halo Health — Quiet food noise, for good.",
   description:
     "Personalized GLP-1 weight management through licensed telehealth providers and compounded medications from a state-licensed 503A pharmacy. 100% online.",
