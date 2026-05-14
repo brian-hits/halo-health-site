@@ -1,28 +1,33 @@
 import Logo from "./Logo";
+import { LINKS } from "@/lib/links";
 
+// href "#" = destination not provided yet (calculators, policy pages, etc.)
 const COLUMNS = [
   {
     title: "Treatment",
-    links: ["Weight loss", "Anti-aging"],
+    links: [
+      { label: "Weight loss", href: LINKS.intake },
+      { label: "Anti-aging", href: LINKS.intake },
+    ],
   },
   {
     title: "Tools",
     links: [
-      "BMI calculator",
-      "TDEE calculator",
-      "Calorie deficit calculator",
-      "Protein calculator",
-      "Water intake calculator",
+      { label: "BMI calculator", href: "#" },
+      { label: "TDEE calculator", href: "#" },
+      { label: "Calorie deficit calculator", href: "#" },
+      { label: "Protein calculator", href: "#" },
+      { label: "Water intake calculator", href: "#" },
     ],
   },
   {
     title: "Halo",
     links: [
-      "Contact",
-      "FAQ",
-      "How it works",
-      "Halo Cares Program",
-      "Referral program",
+      { label: "Contact", href: LINKS.contactEmail },
+      { label: "FAQ", href: "#faq" },
+      { label: "How it works", href: "#how-it-works" },
+      { label: "Halo Cares Program", href: "#" },
+      { label: "Referral program", href: "#" },
     ],
   },
 ];
@@ -51,7 +56,9 @@ export default function Footer() {
           <div className="flex flex-col justify-between gap-12 lg:flex-row">
             {/* Brand side */}
             <div className="flex flex-col gap-8">
-              <Logo variant="white" />
+              <a href={LINKS.home} aria-label="Halo Health home" className="w-fit">
+                <Logo variant="white" />
+              </a>
               <div className="flex flex-wrap gap-[5px]">
                 {Array.from({ length: 7 }).map((_, i) => (
                   <PaymentChip key={i} />
@@ -85,12 +92,12 @@ export default function Footer() {
                   </h3>
                   <ul className="flex flex-col gap-4">
                     {col.links.map((link) => (
-                      <li key={link}>
+                      <li key={link.label}>
                         <a
-                          href="#"
+                          href={link.href}
                           className="text-[16px] leading-6 tracking-[-0.3px] text-[#ababab] transition-colors hover:text-halo-white"
                         >
-                          {link}
+                          {link.label}
                         </a>
                       </li>
                     ))}

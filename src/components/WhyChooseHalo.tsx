@@ -1,4 +1,5 @@
 import Button from "./ui/Button";
+import { LINKS } from "@/lib/links";
 
 const HERO_BG = "/figma/halo_background2__64d1f48f.jpg";
 const WHY_BG = "/figma/why-choose-visual-p-1600__f1f3f37a.png";
@@ -137,7 +138,7 @@ export default function WhyChooseHalo() {
           </div>
 
           <div className="flex justify-center">
-            <Button href="#" variant="light" icon>
+            <Button href={LINKS.intake} variant="light" icon>
               Get Started
             </Button>
           </div>

@@ -1,4 +1,5 @@
 import Button from "./ui/Button";
+import { LINKS } from "@/lib/links";
 
 const CTA_BG = "/figma/proven-treatmen-visual__b015e68c.png";
 
@@ -43,7 +44,7 @@ export default function FinalCta() {
           </div>
 
           {/* CTA */}
-          <Button href="#" variant="light" icon>
+          <Button href={LINKS.intake} variant="light" icon>
             Get Started
           </Button>
         </div>

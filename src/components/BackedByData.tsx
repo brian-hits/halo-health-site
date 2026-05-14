@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "./ui/Button";
+import { LINKS } from "@/lib/links";
 
 const WEIGHT_BG = "/figma/weight_loss_bg-p-1600__cf097844.png";
 
@@ -55,7 +56,7 @@ export default function BackedByData() {
                 backed by data
               </span>
             </h2>
-            <Button href="#" variant="light" icon>
+            <Button href={LINKS.intake} variant="light" icon>
               Get Started
             </Button>
           </div>

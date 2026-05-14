@@ -1,4 +1,5 @@
 import Button from "./ui/Button";
+import { LINKS } from "@/lib/links";
 
 const HOW_BG = "/figma/how-it-works-bg-p-1600__efee76a0.png";
 
@@ -81,7 +82,10 @@ function StepIcon({ children }: { children: React.ReactNode }) {
 
 export default function HowItWorks() {
   return (
-    <section className="bg-halo-cream px-6 py-14 lg:px-12">
+    <section
+      id="how-it-works"
+      className="scroll-mt-24 bg-halo-cream px-6 py-14 lg:px-12"
+    >
       <div
         className="relative mx-auto max-w-[1344px] overflow-hidden rounded-[32px] bg-halo-midnight bg-cover bg-center"
         style={{ backgroundImage: `url(${HOW_BG})` }}
@@ -95,7 +99,7 @@ export default function HowItWorks() {
             <h2 className="font-display text-[40px] leading-[0.95] tracking-[-1px] text-halo-white sm:text-[52px] lg:text-[62px]">
               How it <span className="font-display-xtall">works</span>
             </h2>
-            <Button href="#treatments" variant="light" icon>
+            <Button href={LINKS.intake} variant="light" icon>
               Get Started
             </Button>
           </div>
@@ -124,7 +128,7 @@ export default function HowItWorks() {
                   </div>
                 </div>
                 <a
-                  href="#"
+                  href={LINKS.intake}
                   className="flex items-center justify-center gap-4 rounded-full border border-white/10 bg-white/10 px-5 py-4 text-[16px] font-medium leading-4 tracking-[-0.3px] text-halo-white transition hover:bg-white/[0.18]"
                 >
                   {s.cta}

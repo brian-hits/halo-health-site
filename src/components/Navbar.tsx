@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import Logo from "./Logo";
+import { LINKS } from "@/lib/links";
 
 const NAV_LINKS = [
-  { label: "Weight loss", href: "#treatments" },
-  { label: "Anti aging", href: "#treatments", hasMenu: true },
-  { label: "Skin", href: "#treatments" },
+  { label: "Weight loss", href: LINKS.intake },
+  { label: "Anti aging", href: LINKS.intake, hasMenu: true },
+  { label: "Skin", href: LINKS.intake },
 ];
 
 export default function Navbar() {
@@ -16,7 +17,11 @@ export default function Navbar() {
     <nav className="absolute inset-x-0 top-0 z-50">
       <div className="mx-auto flex h-[88px] max-w-[1344px] items-center justify-between px-6 md:h-[113px] lg:px-12">
         {/* Logo */}
-        <a href="#" aria-label="Halo Health home" className="flex items-center">
+        <a
+          href={LINKS.home}
+          aria-label="Halo Health home"
+          className="flex items-center"
+        >
           <Logo variant="white" />
         </a>
 
@@ -47,7 +52,7 @@ export default function Navbar() {
         {/* Right side */}
         <div className="flex items-center gap-2">
           <a
-            href="#"
+            href={LINKS.patientPortal}
             className="rounded-full border border-[#28282814] px-6 py-[10px] text-[16px] leading-4 tracking-[-0.3px] text-halo-white transition-colors hover:bg-white/10"
           >
             Login

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
+import { LINKS } from "@/lib/links";
 
 const HERO_BG = "/figma/halo_background2__64d1f48f.jpg";
 
@@ -86,14 +87,14 @@ export default function Treatments() {
                   </div>
                   <div className="flex items-center gap-2">
                     <a
-                      href="#"
+                      href={LINKS.intake}
                       className="flex flex-1 items-center justify-center gap-3 rounded-full border border-white px-6 py-4 text-[16px] font-medium leading-4 tracking-[-0.3px] text-halo-white transition hover:bg-white/10"
                     >
                       Get started
                       <ArrowIcon stroke="#939393" />
                     </a>
                     <a
-                      href="#"
+                      href={LINKS.intake}
                       className="flex flex-1 items-center justify-center rounded-full border border-[#dedede] bg-halo-white px-6 py-4 text-[16px] font-medium leading-4 tracking-[-0.3px] text-halo-ink shadow-[0_4px_15px_rgba(0,0,0,0.05)] transition hover:bg-white/90"
                     >
                       Learn more

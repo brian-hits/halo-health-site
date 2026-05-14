@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Navbar from "./Navbar";
+import { LINKS } from "@/lib/links";
 
 const HERO_BG = "/figma/halo_background2__64d1f48f.jpg";
 const VIAL = "/figma/bg_removal_background_removed__32c56812.png";
@@ -90,7 +91,7 @@ export default function Hero() {
             </div>
 
             <a
-              href="#treatments"
+              href={LINKS.intake}
               className="flex items-center gap-3 rounded-full bg-halo-white px-6 py-4 text-[16px] font-medium leading-4 tracking-[-0.3px] text-[#1a041b] transition hover:bg-white/90"
             >
               Find your treatment
@@ -115,7 +116,7 @@ export default function Hero() {
           {CARDS.map((card) => (
             <a
               key={card.title}
-              href="#"
+              href={LINKS.intake}
               className="group flex h-[311px] flex-col justify-between rounded-2xl bg-white/[0.06] p-8 transition hover:bg-white/[0.1]"
             >
               <div className="flex flex-1 items-center justify-center">

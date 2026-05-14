@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { LINKS } from "@/lib/links";
 
 const HERO_BG = "/figma/halo_background2__64d1f48f.jpg";
 
@@ -37,7 +38,8 @@ export default function Faq() {
 
   return (
     <section
-      className="bg-halo-midnight bg-cover bg-center px-6 py-28 lg:px-12"
+      id="faq"
+      className="scroll-mt-24 bg-halo-midnight bg-cover bg-center px-6 py-28 lg:px-12"
       style={{ backgroundImage: `url(${HERO_BG})` }}
     >
       <div className="mx-auto flex max-w-[960px] flex-col items-center gap-10">
@@ -102,7 +104,7 @@ export default function Faq() {
             Still have questions?
           </p>
           <a
-            href="#"
+            href={LINKS.contactEmail}
             className="rounded-full bg-halo-white px-6 py-4 text-[16px] font-medium leading-4 tracking-[-0.3px] text-halo-ink transition hover:bg-white/90"
           >
             Send us a message

@@ -1,3 +1,5 @@
+import { LINKS } from "@/lib/links";
+
 const TEXT =
   "All results refer to participation in the full Weight Loss by Halo program, a holistic program that combines personalized coaching, nutrition and lifestyle support, a reduced-calorie diet and exercise, and, when clinically appropriate, FDA-approved GLP-1 medication or compounded GLP-1 medication dispensed by licensed pharmacies pursuant to a prescription. Medication eligibility and outcomes depend on individual clinical evaluation. Compounded drugs provided through Halo have not been reviewed or approved by the U.S. Food and Drug Administration for safety or effectiveness. Before-and-after images are submitted by paid Halo affiliates. Results have not been independently verified and will vary from person to person. Available in all 50 states, restrictions apply. Discontinuing treatment may lead to weight regain.";
 
@@ -14,7 +16,7 @@ export default function ResultsDisclaimer() {
           {TEXT}
         </p>
         <a
-          href="#"
+          href={LINKS.intake}
           className="rounded-full bg-halo-white px-6 py-4 text-[16px] font-medium leading-4 tracking-[-0.3px] text-[#363636] transition hover:bg-white/90"
         >
           Start your journey
