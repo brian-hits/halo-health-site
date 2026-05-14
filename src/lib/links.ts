@@ -8,4 +8,9 @@ export const LINKS = {
   // Support inbox.
   contactEmail: "mailto:help@tryhalohealth.com",
   home: "/",
+  // Halo's legal pages, served via Bask (account id 8576).
+  privacyPolicy:
+    "https://intake.tryhalohealth.com/policy/privacy-policy?id=8576",
+  termsOfService:
+    "https://intake.tryhalohealth.com/policy/terms-of-service?id=8576",
 } as const;

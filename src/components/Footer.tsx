@@ -1,7 +1,6 @@
 import Logo from "./Logo";
 import { LINKS } from "@/lib/links";
 
-// href "#" = destination not provided yet (calculators, policy pages, etc.)
 const COLUMNS = [
   {
     title: "Treatment",
@@ -13,30 +12,34 @@ const COLUMNS = [
   {
     title: "Tools",
     links: [
-      { label: "BMI calculator", href: "#" },
-      { label: "TDEE calculator", href: "#" },
-      { label: "Calorie deficit calculator", href: "#" },
-      { label: "Protein calculator", href: "#" },
-      { label: "Water intake calculator", href: "#" },
+      { label: "BMI calculator", href: "/tools/bmi-calculator" },
+      { label: "TDEE calculator", href: "/tools/tdee-calculator" },
+      {
+        label: "Calorie deficit calculator",
+        href: "/tools/calorie-deficit-calculator",
+      },
+      { label: "Protein calculator", href: "/tools/protein-calculator" },
+      {
+        label: "Water intake calculator",
+        href: "/tools/water-intake-calculator",
+      },
     ],
   },
   {
     title: "Halo",
     links: [
       { label: "Contact", href: LINKS.contactEmail },
-      { label: "FAQ", href: "#faq" },
-      { label: "How it works", href: "#how-it-works" },
-      { label: "Halo Cares Program", href: "#" },
-      { label: "Referral program", href: "#" },
+      { label: "FAQ", href: "/#faq" },
+      { label: "How it works", href: "/#how-it-works" },
+      { label: "Halo Cares Program", href: "/halo-cares" },
+      { label: "Referral program", href: "/referral" },
     ],
   },
 ];
 
 const LEGAL = [
-  "Important safety information",
-  "Privacy Policy",
-  "Terms of Service",
-  "Your privacy choices",
+  { label: "Privacy Policy", href: LINKS.privacyPolicy },
+  { label: "Terms of Service", href: LINKS.termsOfService },
 ];
 
 // Generic payment-method chips (swap for brand SVGs when available).
@@ -112,9 +115,14 @@ export default function Footer() {
             <p>© 2026 Halo — All rights reserved.</p>
             <ul className="flex flex-wrap gap-x-6 gap-y-2">
               {LEGAL.map((item) => (
-                <li key={item}>
-                  <a href="#" className="transition-colors hover:text-halo-white/70">
-                    {item}
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-halo-white/70"
+                  >
+                    {item.label}
                   </a>
                 </li>
               ))}
