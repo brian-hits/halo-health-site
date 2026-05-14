@@ -63,13 +63,13 @@ export default function Footer() {
                 href="https://www.legitscript.com/websites/?checker_keywords=tryhalohealth.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Verify LegitScript Approval for tryhalohealth.com"
+                title="Verify LegitScript Approval for www.tryhalohealth.com"
                 className="w-fit"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="https://static.legitscript.com/seals/50006816.png"
-                  alt="LegitScript Certified — verify approval for tryhalohealth.com"
+                  alt="Verify Approval for www.tryhalohealth.com"
                   width={73}
                   height={79}
                 />
