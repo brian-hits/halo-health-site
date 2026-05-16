@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useRef, useState } from "react";
 
 const HERO_BG = "/figma/halo_background2__64d1f48f.jpg";
@@ -8,85 +7,62 @@ const HERO_BG = "/figma/halo_background2__64d1f48f.jpg";
 const REVIEWS = [
   {
     name: "Johnna, 30",
-    before: "/figma/before__c043a6c4.png",
-    after: "/figma/after__4573e2b1.png",
     startWeight: "357 lbs",
     endWeight: "120 lbs",
     height: "5’2”",
-    startMonth: "Month 0",
-    endMonth: "Month 24",
+    months: 24,
     quote:
-      "“Halo changed my life. Their GLP-1 program made weight loss easier and safer, and I emerged not just lighter but more confident, energetic, and positive. The team’s consistent support made all the difference, and I’m truly grateful.”",
+      "Halo changed my life. Their GLP-1 program made weight loss easier and safer, and I emerged not just lighter but more confident, energetic, and positive. The team’s consistent support made all the difference, and I’m truly grateful.",
   },
   {
     name: "Tara, 49",
-    before: "/figma/before__69285417.png",
-    after: "/figma/after__d26dc62e.png",
     startWeight: "342 lbs",
     endWeight: "121 lbs",
     height: "5’4”",
-    startMonth: "Month 0",
-    endMonth: "Month 30",
+    months: 30,
     quote:
-      "“After losing my sister to obesity, I’d nearly given up after years of failed diets. I never imagined I’d lose 221 pounds—or find peace in the process. Halo quieted the noise, gave me my health back, and showed me what freedom really feels like.”",
+      "After losing my sister to obesity, I’d nearly given up after years of failed diets. I never imagined I’d lose 221 pounds—or find peace in the process. Halo quieted the noise, gave me my health back, and showed me what freedom really feels like.",
   },
   {
     name: "Alexis, 26",
-    before: "/figma/before__4069355a.png",
-    after: "/figma/after__4e779d84.png",
     startWeight: "286 lbs",
     endWeight: "158 lbs",
     height: "5’11”",
-    startMonth: "Month 0",
-    endMonth: "Month 11",
+    months: 11,
     quote:
-      "“After dealing with obesity my entire life, I finally decided to make a change. I am down 128 pounds, and weigh less now than I did when I was 11 years old. Halo made it easy, affordable and accessible for me to get on a GLP-1. I’ve never had this much confidence before in my life!”",
+      "After dealing with obesity my entire life, I finally decided to make a change. I am down 128 pounds, and weigh less now than I did when I was 11 years old. Halo made it easy, affordable and accessible for me to get on a GLP-1. I’ve never had this much confidence before in my life!",
   },
   {
     name: "Robert, 50",
-    before: "/figma/before__e4fc1938.png",
-    after: "/figma/after__b957f1b8.png",
     startWeight: "308 lbs",
     endWeight: "178 lbs",
     height: "5’10”",
-    startMonth: "Month 0",
-    endMonth: "Month 7",
+    months: 7,
     quote:
-      "“I never thought losing weight—let alone 130 pounds in 7 months—was possible. My gut issues are gone, and my bloodwork is perfect. Halo made it happen and truly changed my life.”",
+      "I never thought losing weight—let alone 130 pounds in 7 months—was possible. My gut issues are gone, and my bloodwork is perfect. Halo made it happen and truly changed my life.",
   },
   {
     name: "Kimberly, 41",
-    before: "/figma/before__04692b2d.png",
-    after: "/figma/after__8481380b.png",
     startWeight: "235 lbs",
     endWeight: "135 lbs",
     height: "5’7”",
-    startMonth: "Month 0",
-    endMonth: "Month 14",
+    months: 14,
     quote:
-      "“I thought bariatric surgery would help me lose weight. It did, but then I regained 120 pounds. Enter Halo. I have achieved and am maintaining my goal weight and feel more confident than ever.”",
+      "I thought bariatric surgery would help me lose weight. It did, but then I regained 120 pounds. Enter Halo. I have achieved and am maintaining my goal weight and feel more confident than ever.",
   },
   {
     name: "Kelly, 45",
-    before: "/figma/before__6850c4d3.png",
-    after: "/figma/after__540c40e7.png",
     startWeight: "272 lbs",
     endWeight: "120 lbs",
     height: "5’2”",
-    startMonth: "Month 0",
-    endMonth: "Month 17",
+    months: 17,
     quote:
-      "“I finally know what it feels like to be ‘normal’, eat when I’m hungry & stop when I’m full. The food noise is gone. Metabolic syndrome, treated. I found hope and strength. If I can do it, so can YOU!”",
+      "I finally know what it feels like to be ‘normal’, eat when I’m hungry & stop when I’m full. The food noise is gone. Metabolic syndrome, treated. I found hope and strength. If I can do it, so can YOU!",
   },
 ];
 
-function Stat({ label }: { label: string }) {
-  return (
-    <span className="rounded-md bg-black/55 px-2 py-0.5 text-[12px] leading-[18px] tracking-[-0.3px] text-halo-white backdrop-blur-sm">
-      {label}
-    </span>
-  );
-}
+const lbsLost = (s: string, e: string) =>
+  parseInt(s, 10) - parseInt(e, 10);
 
 export default function Testimonials() {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -127,7 +103,7 @@ export default function Testimonials() {
             ))}
           </div>
           <span className="text-[16px] leading-6 tracking-[-0.3px] text-halo-white">
-            4.5 • 2000+ reviews
+            4.5 • Member reviews
           </span>
         </div>
 
@@ -146,44 +122,45 @@ export default function Testimonials() {
                 key={r.name}
                 className="flex w-[calc((100%-2rem)/3)] min-w-[300px] shrink-0 snap-start flex-col overflow-hidden rounded-2xl bg-[#f9f9f9]"
               >
-                {/* Before / after */}
-                <div className="grid grid-cols-2 gap-px">
-                  {(
-                    [
-                      {
-                        src: r.before,
-                        month: r.startMonth,
-                        stats: [r.startWeight, r.height],
-                      },
-                      { src: r.after, month: r.endMonth, stats: [r.endWeight] },
-                    ] as const
-                  ).map((p, i) => (
-                    <div key={i} className="relative aspect-[316/360]">
-                      <Image
-                        src={p.src}
-                        alt={r.name}
-                        fill
-                        className="object-cover"
-                      />
-                      <span className="absolute left-2 top-2 rounded-md bg-black/55 px-2 py-0.5 text-[12px] leading-[18px] tracking-[-0.3px] text-halo-white backdrop-blur-sm">
-                        {p.month}
-                      </span>
-                      <div className="absolute bottom-2 left-2 flex flex-wrap gap-1">
-                        {p.stats.map((s) => (
-                          <Stat key={s} label={s} />
-                        ))}
-                      </div>
-                    </div>
-                  ))}
+                {/* Transformation stat */}
+                <div
+                  className="flex flex-col items-center gap-2 px-6 py-7 text-center text-halo-white"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #2a0a3d 0%, #100021 100%)",
+                  }}
+                >
+                  <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-halo-white/60">
+                    Lost
+                  </span>
+                  <div className="flex items-baseline gap-2">
+                    <span className="font-display text-[48px] leading-none">
+                      {lbsLost(r.startWeight, r.endWeight)}
+                    </span>
+                    <span className="text-[16px] text-halo-white/70">lbs</span>
+                  </div>
+                  <span className="text-[13px] leading-[18px] tracking-[-0.2px] text-halo-white/60">
+                    {r.startWeight} → {r.endWeight} · over {r.months} months · {r.height}
+                  </span>
                 </div>
 
                 {/* Quote + name */}
-                <div className="flex flex-1 flex-col items-center gap-4 px-6 py-7 text-center">
-                  <p className="flex-1 text-[16px] leading-6 tracking-[-0.3px] text-[#525252]">
+                <div className="flex flex-1 flex-col items-center gap-5 px-6 py-7 text-center">
+                  <svg
+                    width="22"
+                    height="18"
+                    viewBox="0 0 22 18"
+                    fill="#100021"
+                    aria-hidden
+                    className="opacity-15"
+                  >
+                    <path d="M5 0C2.2 0 0 2.3 0 5.2v6.5C0 14.6 2.4 17 5.3 17H9V8H4.5C4.5 5.5 6.4 3.5 9 3.5V0H5zm13 0c-2.8 0-5 2.3-5 5.2v6.5c0 2.9 2.4 5.3 5.3 5.3H22V8h-4.5C17.5 5.5 19.4 3.5 22 3.5V0h-4z" />
+                  </svg>
+                  <p className="flex-1 text-[15px] italic leading-6 tracking-[-0.2px] text-[#525252]">
                     {r.quote}
                   </p>
-                  <p className="text-[16px] leading-6 tracking-[-0.3px] text-halo-ink">
-                    {r.name}
+                  <p className="text-[16px] font-medium leading-6 tracking-[-0.3px] text-halo-ink">
+                    — {r.name}
                   </p>
                 </div>
               </article>

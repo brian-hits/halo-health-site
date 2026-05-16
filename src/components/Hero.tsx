@@ -8,7 +8,6 @@ const VIAL = "/figma/bg_removal_background_removed__32c56812.png";
 const CARDS = [
   { title: "Weight loss", font: "font-manrope" },
   { title: "Anti aging", font: "font-manrope" },
-  { title: "Skin", font: "font-display-tall" },
 ];
 
 function ArrowCircle() {
@@ -43,7 +42,7 @@ export default function Hero() {
             {/* Rating row */}
             <div className="flex items-center gap-4">
               <span className="rounded-full bg-[#0b0b0b0d] px-4 py-1.5 text-[14px] font-medium leading-[21px] tracking-[-0.3px] text-halo-white">
-                250,000+ patients
+                Trusted by patients nationwide
               </span>
               <span className="flex items-center gap-1.5 rounded-full bg-white/[0.05] px-4 py-1.5">
                 <span className="text-[14px] font-bold leading-[21px] tracking-[-0.3px] text-halo-white">
@@ -111,7 +110,7 @@ export default function Hero() {
         {/* Treatment cards */}
         <div
           id="treatments"
-          className="mt-[72px] grid grid-cols-1 gap-4 md:grid-cols-3"
+          className="mt-[72px] grid grid-cols-1 gap-4 sm:grid-cols-2"
         >
           {CARDS.map((card) => (
             <a

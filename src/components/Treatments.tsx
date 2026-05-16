@@ -15,20 +15,6 @@ const TREATMENTS = [
   { name: "Lipo-B injections", img: "/figma/lipo-b-img__0f1333f6.png" },
 ];
 
-function ArrowIcon({ stroke }: { stroke: string }) {
-  return (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-      <path
-        d="M3.5 12.5L12.5 3.5M12.5 3.5H5M12.5 3.5V11"
-        stroke={stroke}
-        strokeWidth="1.14"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 export default function Treatments() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [page, setPage] = useState(0);
@@ -85,25 +71,13 @@ export default function Treatments() {
                       className="h-full w-auto object-contain"
                     />
                   </div>
-                  <div className="flex items-center gap-2">
-                    <a
-                      href={LINKS.intake}
-                      className="flex flex-1 items-center justify-center gap-3 rounded-full border border-white px-6 py-4 text-[16px] font-medium leading-4 tracking-[-0.3px] text-halo-white transition hover:bg-white/10"
-                    >
-                      Get started
-                      <ArrowIcon stroke="#939393" />
-                    </a>
-                    <a
-                      href={LINKS.intake}
-                      className="flex flex-1 items-center justify-center rounded-full border border-[#dedede] bg-halo-white px-6 py-4 text-[16px] font-medium leading-4 tracking-[-0.3px] text-halo-ink shadow-[0_4px_15px_rgba(0,0,0,0.05)] transition hover:bg-white/90"
-                    >
-                      Learn more
-                    </a>
-                  </div>
+                  <a
+                    href={LINKS.intake}
+                    className="flex items-center justify-center rounded-full border border-[#dedede] bg-halo-white px-6 py-4 text-[16px] font-medium leading-4 tracking-[-0.3px] text-halo-ink shadow-[0_4px_15px_rgba(0,0,0,0.05)] transition hover:bg-white/90"
+                  >
+                    Get started
+                  </a>
                 </div>
-                <p className="text-center text-[14px] leading-[21px] tracking-[-0.3px] text-halo-gray-faint">
-                  Important safety information
-                </p>
               </div>
             ))}
           </div>

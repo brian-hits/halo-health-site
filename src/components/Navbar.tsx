@@ -6,8 +6,7 @@ import { LINKS } from "@/lib/links";
 
 const NAV_LINKS = [
   { label: "Weight loss", href: LINKS.intake },
-  { label: "Anti aging", href: LINKS.intake, hasMenu: true },
-  { label: "Skin", href: LINKS.intake },
+  { label: "Anti aging", href: LINKS.intake },
 ];
 
 export default function Navbar() {
@@ -31,20 +30,9 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="flex items-center gap-2 rounded-xl px-4 py-3 text-[16px] leading-6 tracking-[-0.3px] text-halo-white transition-colors hover:bg-white/10"
+              className="rounded-xl px-4 py-3 text-[16px] leading-6 tracking-[-0.3px] text-halo-white transition-colors hover:bg-white/10"
             >
               {link.label}
-              {link.hasMenu && (
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
-                  <path
-                    d="M1.5 1.5L6 6l4.5-4.5"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              )}
             </a>
           ))}
         </div>

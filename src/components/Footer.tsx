@@ -39,17 +39,10 @@ const COLUMNS = [
 
 const LEGAL = [
   { label: "Privacy Policy", href: LINKS.privacyPolicy },
+  { label: "HIPAA Privacy Policy", href: LINKS.hipaaPolicy },
   { label: "Terms of Service", href: LINKS.termsOfService },
+  { label: "Return Policy", href: LINKS.returnPolicy },
 ];
-
-// Generic payment-method chips (swap for brand SVGs when available).
-function PaymentChip() {
-  return (
-    <span className="flex h-6 w-9 items-center justify-center rounded-[4px] bg-white/10">
-      <span className="h-1.5 w-5 rounded-full bg-white/30" />
-    </span>
-  );
-}
 
 export default function Footer() {
   return (
@@ -62,11 +55,6 @@ export default function Footer() {
               <a href={LINKS.home} aria-label="Halo Health home" className="w-fit">
                 <Logo variant="white" />
               </a>
-              <div className="flex flex-wrap gap-[5px]">
-                {Array.from({ length: 7 }).map((_, i) => (
-                  <PaymentChip key={i} />
-                ))}
-              </div>
               {/* Official LegitScript Certified seal — served from LegitScript's
                   CDN so it always reflects current certification status. */}
               <a
@@ -118,8 +106,6 @@ export default function Footer() {
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="transition-colors hover:text-halo-white/70"
                   >
                     {item.label}

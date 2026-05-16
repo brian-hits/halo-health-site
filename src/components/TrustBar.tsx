@@ -3,7 +3,7 @@ const ITEMS = [
   { label: "Free expedited delivery", icon: "truck" },
   { label: "No hidden fees", icon: "price" },
   { label: "Unlimited 24/7 support", icon: "chat" },
-  { label: "100,000+ members", icon: "bag" },
+  { label: "Available in all 50 states", icon: "bag" },
   { label: "100% online", icon: "bag" },
 ] as const;
 

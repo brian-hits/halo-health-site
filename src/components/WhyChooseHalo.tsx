@@ -53,7 +53,7 @@ const LEFT: Feature[] = [
 
 const RIGHT: Feature[] = [
   {
-    text: "100,000+ members\ntreated",
+    text: "Available in\nall 50 states",
     icon: icon(
       <>
         <circle cx="9" cy="8" r="3.2" />
