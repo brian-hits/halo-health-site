@@ -49,9 +49,7 @@
         ],
         "fingerprint": "0",
         "firingTriggerId": ["10"],
-        "tagFiringOption": "oncePerEvent",
-        "monitoringMetadata": { "type": "MAP" },
-        "consentSettings": { "consentStatus": "NOT_SET" }
+        "tagFiringOption": "ONCE_PER_EVENT"
       },
       {
         "accountId": "6356647778",
@@ -69,9 +67,7 @@
         ],
         "fingerprint": "0",
         "firingTriggerId": ["11"],
-        "tagFiringOption": "oncePerEvent",
-        "monitoringMetadata": { "type": "MAP" },
-        "consentSettings": { "consentStatus": "NOT_SET" }
+        "tagFiringOption": "ONCE_PER_EVENT"
       },
       {
         "accountId": "6356647778",
@@ -89,9 +85,7 @@
         ],
         "fingerprint": "0",
         "firingTriggerId": ["12"],
-        "tagFiringOption": "oncePerEvent",
-        "monitoringMetadata": { "type": "MAP" },
-        "consentSettings": { "consentStatus": "NOT_SET" }
+        "tagFiringOption": "ONCE_PER_EVENT"
       },
       {
         "accountId": "6356647778",
@@ -109,9 +103,7 @@
         ],
         "fingerprint": "0",
         "firingTriggerId": ["13"],
-        "tagFiringOption": "oncePerEvent",
-        "monitoringMetadata": { "type": "MAP" },
-        "consentSettings": { "consentStatus": "NOT_SET" }
+        "tagFiringOption": "ONCE_PER_EVENT"
       }
     ],
     "trigger": [
@@ -120,7 +112,7 @@
         "containerId": "253163003",
         "triggerId": "10",
         "name": "All Pages",
-        "type": "pageview",
+        "type": "PAGEVIEW",
         "fingerprint": "0"
       },
       {
@@ -128,10 +120,10 @@
         "containerId": "253163003",
         "triggerId": "11",
         "name": "Event — reach",
-        "type": "customEvent",
+        "type": "CUSTOM_EVENT",
         "customEventFilter": [
           {
-            "type": "equals",
+            "type": "EQUALS",
             "parameter": [
               { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
               { "type": "TEMPLATE", "key": "arg1", "value": "reach" }
@@ -145,10 +137,10 @@
         "containerId": "253163003",
         "triggerId": "12",
         "name": "Event — sanctum",
-        "type": "customEvent",
+        "type": "CUSTOM_EVENT",
         "customEventFilter": [
           {
-            "type": "equals",
+            "type": "EQUALS",
             "parameter": [
               { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
               { "type": "TEMPLATE", "key": "arg1", "value": "sanctum" }
@@ -162,10 +154,10 @@
         "containerId": "253163003",
         "triggerId": "13",
         "name": "Event — glimmer",
-        "type": "customEvent",
+        "type": "CUSTOM_EVENT",
         "customEventFilter": [
           {
-            "type": "equals",
+            "type": "EQUALS",
             "parameter": [
               { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
               { "type": "TEMPLATE", "key": "arg1", "value": "glimmer" }
@@ -187,8 +179,7 @@
           { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" },
           { "type": "BOOLEAN", "key": "setDefaultValue", "value": "false" }
         ],
-        "fingerprint": "0",
-        "formatValue": {}
+        "fingerprint": "0"
       },
       {
         "accountId": "6356647778",
@@ -201,8 +192,7 @@
           { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" },
           { "type": "BOOLEAN", "key": "setDefaultValue", "value": "false" }
         ],
-        "fingerprint": "0",
-        "formatValue": {}
+        "fingerprint": "0"
       }
     ],
     "fingerprint": "0",
