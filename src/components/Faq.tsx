@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { LINKS } from "@/lib/links";
+import { trackGlimmer } from "./Tracking";
 
 const HERO_BG = "/figma/halo_background2__64d1f48f.jpg";
 
@@ -57,7 +58,10 @@ export default function Faq() {
               >
                 <button
                   type="button"
-                  onClick={() => setOpen(isOpen ? null : i)}
+                  onClick={() => {
+                    if (!isOpen) trackGlimmer(`faq:${item.q}`);
+                    setOpen(isOpen ? null : i);
+                  }}
                   aria-expanded={isOpen}
                   className="flex w-full items-center justify-between gap-6 px-6 py-2 text-left"
                 >

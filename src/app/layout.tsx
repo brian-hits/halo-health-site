@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Manrope, Fraunces } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import Tracking from "@/components/Tracking";
 
 // Google Tag Manager container — handles GA4, Meta Pixel, TikTok Pixel,
 // and conversion event tags from the GTM dashboard.
@@ -73,6 +74,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
+        <Tracking />
         {children}
       </body>
     </html>
