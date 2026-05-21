@@ -1,0 +1,211 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-05-21T00:00:00.000Z",
+  "containerVersion": {
+    "path": "accounts/6356647778/containers/253163003/versions/0",
+    "accountId": "6356647778",
+    "containerId": "253163003",
+    "containerVersionId": "0",
+    "container": {
+      "path": "accounts/6356647778/containers/253163003",
+      "accountId": "6356647778",
+      "containerId": "253163003",
+      "name": "tryhalohealth.com",
+      "publicId": "GTM-5H2CVBFQ",
+      "usageContext": ["WEB"],
+      "fingerprint": "0",
+      "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6356647778/containers/253163003/workspaces?apiLink=container",
+      "features": {
+        "supportUserPermissions": true,
+        "supportEnvironments": true,
+        "supportWorkspaces": true,
+        "supportGtagConfigs": true,
+        "supportBuiltInVariables": true,
+        "supportClients": true,
+        "supportFolders": true,
+        "supportTags": true,
+        "supportTemplates": true,
+        "supportTriggers": true,
+        "supportVariables": true,
+        "supportVersions": true,
+        "supportZones": true,
+        "supportTransformations": true
+      }
+    },
+    "tag": [
+      {
+        "accountId": "6356647778",
+        "containerId": "253163003",
+        "tagId": "1",
+        "name": "Meta Pixel — Base Code",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<!-- Meta Pixel Code -->\n<script>\n!function(f,b,e,v,n,t,s)\n{if(f.fbq)return;n=f.fbq=function(){n.callMethod?\nn.callMethod.apply(n,arguments):n.queue.push(arguments)};\nif(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';\nn.queue=[];t=b.createElement(e);t.async=!0;\nt.src=v;s=b.getElementsByTagName(e)[0];\ns.parentNode.insertBefore(t,s)}(window, document,'script',\n'https://connect.facebook.net/en_US/fbevents.js');\nfbq('init', '1895488014484920');\nfbq('track', 'PageView');\n</script>\n<noscript><img height=\"1\" width=\"1\" style=\"display:none\" src=\"https://www.facebook.com/tr?id=1895488014484920&ev=PageView&noscript=1\"/></noscript>\n<!-- End Meta Pixel Code -->"
+          },
+          { "type": "BOOLEAN", "key": "supportDocumentWrite", "value": "false" }
+        ],
+        "fingerprint": "0",
+        "firingTriggerId": ["10"],
+        "tagFiringOption": "oncePerEvent",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" }
+      },
+      {
+        "accountId": "6356647778",
+        "containerId": "253163003",
+        "tagId": "2",
+        "name": "Meta — Reach",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\n  if (window.fbq) {\n    fbq('trackCustom', 'Reach', {\n      treatment: {{DLV - treatment}} || 'glp'\n    });\n  }\n</script>"
+          },
+          { "type": "BOOLEAN", "key": "supportDocumentWrite", "value": "false" }
+        ],
+        "fingerprint": "0",
+        "firingTriggerId": ["11"],
+        "tagFiringOption": "oncePerEvent",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" }
+      },
+      {
+        "accountId": "6356647778",
+        "containerId": "253163003",
+        "tagId": "3",
+        "name": "Meta — Sanctum",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\n  if (window.fbq) {\n    fbq('trackCustom', 'Sanctum');\n  }\n</script>"
+          },
+          { "type": "BOOLEAN", "key": "supportDocumentWrite", "value": "false" }
+        ],
+        "fingerprint": "0",
+        "firingTriggerId": ["12"],
+        "tagFiringOption": "oncePerEvent",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" }
+      },
+      {
+        "accountId": "6356647778",
+        "containerId": "253163003",
+        "tagId": "4",
+        "name": "Meta — Glimmer",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\n  if (window.fbq) {\n    fbq('trackCustom', 'Glimmer', {\n      section: {{DLV - section}} || 'unknown'\n    });\n  }\n</script>"
+          },
+          { "type": "BOOLEAN", "key": "supportDocumentWrite", "value": "false" }
+        ],
+        "fingerprint": "0",
+        "firingTriggerId": ["13"],
+        "tagFiringOption": "oncePerEvent",
+        "monitoringMetadata": { "type": "MAP" },
+        "consentSettings": { "consentStatus": "NOT_SET" }
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "6356647778",
+        "containerId": "253163003",
+        "triggerId": "10",
+        "name": "All Pages",
+        "type": "pageview",
+        "fingerprint": "0"
+      },
+      {
+        "accountId": "6356647778",
+        "containerId": "253163003",
+        "triggerId": "11",
+        "name": "Event — reach",
+        "type": "customEvent",
+        "customEventFilter": [
+          {
+            "type": "equals",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "reach" }
+            ]
+          }
+        ],
+        "fingerprint": "0"
+      },
+      {
+        "accountId": "6356647778",
+        "containerId": "253163003",
+        "triggerId": "12",
+        "name": "Event — sanctum",
+        "type": "customEvent",
+        "customEventFilter": [
+          {
+            "type": "equals",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "sanctum" }
+            ]
+          }
+        ],
+        "fingerprint": "0"
+      },
+      {
+        "accountId": "6356647778",
+        "containerId": "253163003",
+        "triggerId": "13",
+        "name": "Event — glimmer",
+        "type": "customEvent",
+        "customEventFilter": [
+          {
+            "type": "equals",
+            "parameter": [
+              { "type": "TEMPLATE", "key": "arg0", "value": "{{_event}}" },
+              { "type": "TEMPLATE", "key": "arg1", "value": "glimmer" }
+            ]
+          }
+        ],
+        "fingerprint": "0"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "6356647778",
+        "containerId": "253163003",
+        "variableId": "100",
+        "name": "DLV - treatment",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "treatment" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" },
+          { "type": "BOOLEAN", "key": "setDefaultValue", "value": "false" }
+        ],
+        "fingerprint": "0",
+        "formatValue": {}
+      },
+      {
+        "accountId": "6356647778",
+        "containerId": "253163003",
+        "variableId": "101",
+        "name": "DLV - section",
+        "type": "v",
+        "parameter": [
+          { "type": "TEMPLATE", "key": "name", "value": "section" },
+          { "type": "INTEGER", "key": "dataLayerVersion", "value": "2" },
+          { "type": "BOOLEAN", "key": "setDefaultValue", "value": "false" }
+        ],
+        "fingerprint": "0",
+        "formatValue": {}
+      }
+    ],
+    "fingerprint": "0",
+    "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6356647778/containers/253163003/versions/0?apiLink=version"
+  }
+}
