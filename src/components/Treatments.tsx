@@ -2,17 +2,40 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
-import { LINKS } from "@/lib/links";
 
 const HERO_BG = "/figma/halo_background2__64d1f48f.jpg";
 
 const TREATMENTS = [
-  { name: "GLP-1 injections", img: "/figma/glp_1__8aa5a403.png" },
-  { name: "NAD+ injections", img: "/figma/nad-1__ef3e272e.png" },
-  { name: "Sermorelin injections", img: "/figma/sermorelin__1592e1f0.png" },
-  { name: "Glutathione injections", img: "/figma/glutathione-img__374eb337.png" },
-  { name: "Lipo-C injections", img: "/figma/lipo-c-img__36cb0821.png" },
-  { name: "Lipo-B injections", img: "/figma/lipo-b-img__0f1333f6.png" },
+  {
+    name: "GLP-1 injections",
+    img: "/figma/glp_1__8aa5a403.png",
+    href: "https://intake.tryhalohealth.com/start-online-visit/glp",
+  },
+  {
+    name: "NAD+ injections",
+    img: "/figma/nad-1__ef3e272e.png",
+    href: "https://intake.tryhalohealth.com/start-online-visit/nad",
+  },
+  {
+    name: "Sermorelin injections",
+    img: "/figma/sermorelin__1592e1f0.png",
+    href: "https://intake.tryhalohealth.com/start-online-visit/sermorelin",
+  },
+  {
+    name: "Glutathione injections",
+    img: "/figma/glutathione-img__374eb337.png",
+    href: "https://intake.tryhalohealth.com/start-online-visit/glutathione",
+  },
+  {
+    name: "Lipo-C injections",
+    img: "/figma/lipo-c-img__36cb0821.png",
+    href: "https://intake.tryhalohealth.com/start-online-visit/lipo-c",
+  },
+  {
+    name: "Lipo-B injections",
+    img: "/figma/lipo-b-img__0f1333f6.png",
+    href: "https://intake.tryhalohealth.com/start-online-visit/lipo-b",
+  },
 ];
 
 export default function Treatments() {
@@ -72,7 +95,7 @@ export default function Treatments() {
                     />
                   </div>
                   <a
-                    href={LINKS.intake}
+                    href={t.href}
                     className="flex items-center justify-center rounded-full border border-[#dedede] bg-halo-white px-6 py-4 text-[16px] font-medium leading-4 tracking-[-0.3px] text-halo-ink shadow-[0_4px_15px_rgba(0,0,0,0.05)] transition hover:bg-white/90"
                   >
                     Get started
